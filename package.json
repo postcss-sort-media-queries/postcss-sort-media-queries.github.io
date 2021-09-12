@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "postcss": "^8.3.6",
-    "postcss-sort-media-queries": "^3.11.12",
+    "postcss-sort-media-queries": "^3.12.13",
     "prismjs": "^1.24.1",
     "store": "^2.0.12"
   }
