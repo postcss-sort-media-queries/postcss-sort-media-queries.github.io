@@ -1,6 +1,7 @@
 import { highlightElement } from 'prismjs';
 
 import 'prismjs/themes/prism.css';
+import './main.css';
 
 class App {
 	constructor() {
@@ -18,26 +19,51 @@ class App {
 	}
 
 	vars() {
-		this.$method = document.getElementById('sorting_method');
+		this.$methods = document.querySelectorAll('[name="sorting_method"]');
 		this.$source = document.getElementById('_source');
 		this.$sorted = document.getElementById('_sorted');
 	}
 
 	init() {
+
+		console.log(this.$methods);
+
+		this.$source.innerHTML = `@media (min-width: 576px) {
+	body { color: aliceblue }
+}
+
+@media (min-width: 576px) {
+	header { color: orange }
+}
+
+@media (max-width: 768px) {
+	main { color: red }
+}
+
+@media (max-width: 992px) {
+	footer { color: blue }
+}
+`;
+
 		this.listeners();
 		this.runSorter();
 	}
 
 	listeners() {
 		this.$source.addEventListener('keyup', this.runSorter.bind(this), false);
-		this.$method.addEventListener('change', this.runSorter.bind(this), false);
+
+		this.$methods.forEach(($method) => {
+			$method.addEventListener('change', this.runSorter.bind(this), false);
+		});
 	}
 
 	runSorter() {
 		const inputCSS = this.$source.value;
 		const options = {
-			sort: this.$method.value,
+			sort: this.getSortingMethod(),
 		};
+
+		console.log(this.getSortingMethod());
 
 		this.postcss([this.mqSorter(options)])
 			.process(inputCSS)
@@ -58,6 +84,10 @@ class App {
 
 	textPrepare(text = '') {
 		return text.replace(/\</g, "&lt;").replace(/\>/g, "&gt;");
+	}
+
+	getSortingMethod() {
+		return [...this.$methods].filter(($method) => $method.checked)[0].value;
 	}
 }
 

@@ -7,117 +7,42 @@
 
 	<title>Combine and sort CSS media queries online</title>
 	<meta name="description" content="PostCSS plugin for combine and sort CSS media queries with mobile first or desktop first methods">
-
-	<style>
-		html {
-			font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"PT Sans","Open Sans","Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-			font-size: 100%;
-			line-height: 1.4;
-			background: #fff;
-			color: #000;
-			-webkit-overflow-scrolling: touch
-		}
-		body {
-			margin: calc(24px + 3vh) calc(10px + 3vw);
-			font-size: 1.1rem;
-		}
-		code[class*=language-],
-		pre[class*=language-] {
-			font-size: 1rem !important;
-		}
-
-		h1,h2,h3,h4,h5,h6 {
-			margin: 1.25em 0 0;
-			line-height: 1.2;
-		}
-		p {
-			margin: 1em 0;
-			-webkit-hyphens: auto;
-			-ms-hyphens: auto;
-			hyphens: auto;
-		}
-
-		.combiner-method {
-			height: 38px;
-			padding: 0 16px;
-			font-size: 1rem;
-			border-radius: 3px;
-			border: 1px solid #cdcdcd;
-			margin-bottom: 1rem;
-		}
-
-		.combiner {
-			display: flex;
-			flex-wrap: wrap;
-		}
-		.combiner__input {
-			display: block;
-			overflow: auto;
-			margin: 0 !important;
-			padding: 16px;
-			height: 34vh;
-
-			flex: 0 0 100%;
-			max-width: 100%;
-			width: 100%;
-
-			border: 0;
-
-			font-size: 1rem;
-
-			background: #f5f5f5;
-
-			box-shadow: 0 0 0 1px #cdcdcd;
-
-			box-sizing: border-box;
-
-			resize: none;
-
-			appearance: none;
-		}
-		.combiner__input:focus {
-			z-index: 10;
-		}
-		.combiner__input:first-child {
-			border-radius: 3px 3px 0 0;
-		}
-		.combiner__input:last-child {
-			border-radius: 0 0 3px 3px;
-		}
-
-		@media (min-width:992px) {
-			.combiner__input {
-				flex: 0 0 50%;
-				max-width: 50%;
-
-				height: 50vh;
-			}
-			.combiner__input:first-child {
-				border-radius: 3px 0 0 3px;
-			}
-			.combiner__input:last-child {
-				border-radius: 0 3px 3px 0;
-			}
-		}
-	</style>
-  <script type="module" crossorigin src="/assets/main.f9855c99.js"></script>
+  <script type="module" crossorigin src="/assets/main.5c1ff261.js"></script>
     <link rel="modulepreload" href="/assets/vendor.72ac74de.js">
-    <link rel="stylesheet" href="/assets/main.3b52bed3.css">
+    <link rel="stylesheet" href="/assets/main.7a04d709.css">
   </head>
 <body>
 
-	<h1>Combine and sort CSS media queries online</h1>
-	<p>PostCSS plugin for combine and sort CSS media queries with mobile first or&nbsp;desktop first methods.</p>
+	<header>
+		<h1>Combine and sort CSS media queries online</h1>
+		<p>PostCSS plugin for combine and sort CSS media queries with mobile first or&nbsp;desktop first methods.</p>
+	</header>
 
-	<select id="sorting_method" class="combiner-method">
-		<option value="mobile-first" selected>Mobile First</option>
-		<option value="desktop-first">Desktop First</option>
-	</select>
+	<main>
 
-	<div class="combiner">
-		<textarea class="combiner__input" id="_source"></textarea>
-		<pre class="combiner__input" contenteditable><code id="_sorted" class="language-css"></code></pre>
-	</div>
+		<div class="methods-group">
+			<label class="method">
+				<input class="method__ctrl" type="radio" name="sorting_method" value="mobile-first" checked> <span class="method__name">Mobile First</span>
+			</label>
+			<label class="method">
+				<input class="method__ctrl" type="radio" name="sorting_method" value="desktop-first"> <span class="method__name">Desktop First</span>
+			</label>
+		</div>
+
+		<div class="combiner">
+			<textarea class="combiner__input" id="_source"></textarea>
+			<pre class="combiner__input" contenteditable><code id="_sorted" class="language-css"></code></pre>
+		</div>
+	</main>
+
+	<footer>
+		<nav>
+			<a class="nav-link nav-link--github" href="https://github.com/solversgroup/postcss-sort-media-queries"
+				target="_blank" rel="noopener">GitHub</a> <a class="nav-link nav-link--npm"
+				href="https://www.npmjs.com/package/postcss-sort-media-queries" target="_blank" rel="noopener">NPM</a>
+		</nav>
+		<p><small>2019 © PostCSS sort media queries.</small></p>
+	</footer>
 
 	<!-- Yandex.Metrika counter -->
 	<img src="https://mc.yandex.ru/watch/85121476" style="position:absolute; left:-9999px;" alt="" />
