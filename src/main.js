@@ -25,9 +25,6 @@ class App {
 	}
 
 	init() {
-
-		console.log(this.$methods);
-
 		this.$source.innerHTML = `@media (min-width: 576px) {
 	body { color: aliceblue }
 }
@@ -62,8 +59,6 @@ class App {
 		const options = {
 			sort: this.getSortingMethod(),
 		};
-
-		console.log(this.getSortingMethod());
 
 		this.postcss([this.mqSorter(options)])
 			.process(inputCSS)
