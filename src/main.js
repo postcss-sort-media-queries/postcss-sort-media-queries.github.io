@@ -1,6 +1,4 @@
-import store from 'store';
 import { highlightElement } from 'prismjs';
-import { version as postcssVersion } from 'postcss/package.json';
 
 import 'prismjs/themes/prism.css';
 
