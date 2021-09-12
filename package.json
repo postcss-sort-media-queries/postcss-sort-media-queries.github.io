@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "build": "rm -rf ./docs/** && vite build"
+    "build": "rm -rf ./docs/** && vite build",
+    "refresh-deps": "rm -rf node_modules && rm package-lock.json && npm i"
   },
   "repository": {
     "type": "git",
@@ -22,8 +23,9 @@
   },
   "dependencies": {
     "postcss": "^8.3.6",
-    "postcss-sort-media-queries": "3.11.12",
+    "postcss-sort-media-queries": "4.1.0",
     "prismjs": "^1.24.1",
+    "rollup-plugin-polyfill-node": "^0.7.0",
     "store": "^2.0.12"
   }
 }

@@ -9,7 +9,7 @@ class App {
 	}
 
 	async loadChunks() {
-		const modules = [import('postcss'), import('postcss-sort-media-queries')];
+		const modules = [import('postcss'), import('postcss-sort-media-queries/browser')];
 		const [postcss, mqSorter] = await Promise.all(modules);
 		this.postcss = postcss.default;
 		this.mqSorter = mqSorter.default;
@@ -20,6 +20,7 @@ class App {
 
 	vars() {
 		this.$methods = document.querySelectorAll('[name="sorting_method"]');
+		this.$unitlessMqAlwaysFirst = document.getElementById('unitlessMqAlwaysFirst');
 		this.$source = document.getElementById('_source');
 		this.$sorted = document.getElementById('_sorted');
 	}
@@ -52,12 +53,17 @@ class App {
 		this.$methods.forEach(($method) => {
 			$method.addEventListener('change', this.runSorter.bind(this), false);
 		});
+
+		this.$unitlessMqAlwaysFirst.addEventListener('click', this.runSorter.bind(this), false);
 	}
 
 	runSorter() {
 		const inputCSS = this.$source.value;
 		const options = {
 			sort: this.getSortingMethod(),
+			configuration: {
+				unitlessMqAlwaysFirst: this.$unitlessMqAlwaysFirst.checked,
+			},
 		};
 
 		this.postcss([this.mqSorter(options)])

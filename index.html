@@ -17,12 +17,18 @@
 
 	<main>
 
-		<div class="methods-group">
-			<label class="method">
-				<input class="method__ctrl" type="radio" name="sorting_method" value="mobile-first" checked> <span class="method__name">Mobile First</span>
-			</label>
-			<label class="method">
-				<input class="method__ctrl" type="radio" name="sorting_method" value="desktop-first"> <span class="method__name">Desktop First</span>
+		<div class="sorting-controls">
+			<div class="methods-group">
+				<label class="method">
+					<input class="method__ctrl" type="radio" name="sorting_method" value="mobile-first" checked> <span class="method__name">Mobile First</span>
+				</label>
+				<label class="method">
+					<input class="method__ctrl" type="radio" name="sorting_method" value="desktop-first"> <span class="method__name">Desktop First</span>
+				</label>
+			</div>
+
+			<label class="method-config">
+				<input type="checkbox" name="unitlessMqAlwaysFirst" id="unitlessMqAlwaysFirst" value="yes"> Unitless media-query always first
 			</label>
 		</div>
 

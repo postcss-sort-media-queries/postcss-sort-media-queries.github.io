@@ -26,6 +26,16 @@ p {
 	hyphens: auto;
 }
 
+header {
+	margin-bottom: 2rem;
+}
+
+.method-config {
+	display: inline-block;
+	vertical-align: top;
+	margin: 1rem 0;
+}
+
 .methods-group {
 	display: flex;
 }
@@ -142,6 +152,13 @@ p {
 }
 
 @media (min-width:992px) {
+	.sorting-controls {
+		display: flex;
+		align-items: center;
+	}
+	.method-config {
+		margin: 0 0 0 1rem;
+	}
 	.combiner__input {
 		flex: 0 0 50%;
 		max-width: 50%;

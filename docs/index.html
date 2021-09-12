@@ -7,9 +7,9 @@
 
 	<title>Combine and sort CSS media queries online</title>
 	<meta name="description" content="PostCSS plugin for combine and sort CSS media queries with mobile first or desktop first methods">
-  <script type="module" crossorigin src="/assets/main.d760ec42.js"></script>
+  <script type="module" crossorigin src="/assets/main.7e0f62fd.js"></script>
     <link rel="modulepreload" href="/assets/vendor.72ac74de.js">
-    <link rel="stylesheet" href="/assets/main.c4ed6ace.css">
+    <link rel="stylesheet" href="/assets/main.522285ae.css">
   </head>
 <body>
 
@@ -20,12 +20,18 @@
 
 	<main>
 
-		<div class="methods-group">
-			<label class="method">
-				<input class="method__ctrl" type="radio" name="sorting_method" value="mobile-first" checked> <span class="method__name">Mobile First</span>
-			</label>
-			<label class="method">
-				<input class="method__ctrl" type="radio" name="sorting_method" value="desktop-first"> <span class="method__name">Desktop First</span>
+		<div class="sorting-controls">
+			<div class="methods-group">
+				<label class="method">
+					<input class="method__ctrl" type="radio" name="sorting_method" value="mobile-first" checked> <span class="method__name">Mobile First</span>
+				</label>
+				<label class="method">
+					<input class="method__ctrl" type="radio" name="sorting_method" value="desktop-first"> <span class="method__name">Desktop First</span>
+				</label>
+			</div>
+
+			<label class="method-config">
+				<input type="checkbox" name="unitlessMqAlwaysFirst" id="unitlessMqAlwaysFirst" value="yes"> Unitless media-query always first
 			</label>
 		</div>
 
