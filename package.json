@@ -1,0 +1,29 @@
+{
+  "name": "postcss_sort_media_queries_online",
+  "version": "1.0.0",
+  "description": "Combine and sort CSS media queries online",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "rm -rf ./docs/** && vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/postcss-sort-media-queries/postcss-sort-media-queries.github.io.git"
+  },
+  "author": "yunusga <yunusga@yandex.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/postcss-sort-media-queries/postcss-sort-media-queries.github.io/issues"
+  },
+  "homepage": "https://github.com/postcss-sort-media-queries/postcss-sort-media-queries.github.io#readme",
+  "devDependencies": {
+    "vite": "^2.5.6"
+  },
+  "dependencies": {
+    "postcss": "^8.3.6",
+    "postcss-sort-media-queries": "^3.11.12",
+    "prismjs": "^1.24.1",
+    "store": "^2.0.12"
+  }
+}
