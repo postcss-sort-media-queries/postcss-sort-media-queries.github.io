@@ -18,6 +18,7 @@ class App {
 	}
 
 	vars() {
+		this.$method = document.getElementById('sorting_method');
 		this.$source = document.getElementById('_source');
 		this.$sorted = document.getElementById('_sorted');
 	}
@@ -29,12 +30,16 @@ class App {
 
 	listeners() {
 		this.$source.addEventListener('keyup', this.runSorter.bind(this), false);
+		this.$method.addEventListener('change', this.runSorter.bind(this), false);
 	}
 
 	runSorter() {
 		const inputCSS = this.$source.value;
+		const options = {
+			sort: this.$method.value,
+		};
 
-		this.postcss([this.mqSorter()])
+		this.postcss([this.mqSorter(options)])
 			.process(inputCSS)
 			.then((compiled) => {
 				let html = '';
@@ -42,6 +47,7 @@ class App {
 				html += this.textPrepare(compiled.css);
 
 				this.$sorted.innerHTML = html;
+
 				highlightElement(this.$sorted);
 			})
 			.catch((error) => {
