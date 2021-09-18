@@ -151,6 +151,19 @@ header {
 	border-radius: 0 0 3px 3px;
 }
 
+.def-item:not(:first-child) {
+	margin-top: 1rem;
+}
+
+dt {
+	font-weight: 700;
+}
+dd {
+	font-size: 90%;
+	line-height: 120%;
+	margin-left: 0;
+}
+
 @media (min-width:992px) {
 	.sorting-controls {
 		display: flex;
