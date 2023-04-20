@@ -20,8 +20,8 @@ class App {
 
 		this.postcss = postcss.default;
 		this.mqSorter = mqSorter.default;
-		this.prettier = prettier;
-		this.parserCss = parserCss;
+		this.prettier = prettier.default;
+		this.parserCss = parserCss.default;
 
 		this.vars();
 		this.init();
