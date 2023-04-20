@@ -1,5 +1,5 @@
+import { resolve } from 'path'
 import { defineConfig } from 'vite';
-import nodePolyfills from 'rollup-plugin-polyfill-node';
 
 export default defineConfig({
 	define: {
@@ -9,11 +9,9 @@ export default defineConfig({
 		outDir: 'docs',
 		rollupOptions: {
 			input: {
-				main: './index.html',
+				en: './index.html',
+				uz: './uz/index.html',
 			},
-			// plugins: [
-			// 	nodePolyfills(),
-			// ]
 		},
 	},
 });

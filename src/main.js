@@ -9,10 +9,19 @@ class App {
 	}
 
 	async loadChunks() {
-		const modules = [import('postcss'), import('postcss-sort-media-queries/browser')];
-		const [postcss, mqSorter] = await Promise.all(modules);
+		const modules = [
+			import('postcss'),
+			import('postcss-sort-media-queries/browser'),
+			import('prettier/esm/standalone'),
+			import('prettier/esm/parser-postcss'),
+		];
+
+		const [postcss, mqSorter, prettier, parserCss] = await Promise.all(modules);
+
 		this.postcss = postcss.default;
 		this.mqSorter = mqSorter.default;
+		this.prettier = prettier;
+		this.parserCss = parserCss;
 
 		this.vars();
 		this.init();
@@ -70,6 +79,11 @@ class App {
 			.process(inputCSS)
 			.then((compiled) => {
 				let html = '';
+
+				compiled.css = this.prettier.format(compiled.css, {
+					parser: 'css',
+      		plugins: [this.parserCss],
+				});
 
 				html += this.textPrepare(compiled.css);
 
