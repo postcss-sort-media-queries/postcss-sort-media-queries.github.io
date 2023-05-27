@@ -43,6 +43,14 @@ class App {
 	header { color: orange }
 }
 
+@media (width > 576px) {
+	header { color: orange }
+}
+
+@media (width < 640px) {
+	header { color: orange }
+}
+
 @media (max-width: 768px) {
 	main { color: red }
 }
